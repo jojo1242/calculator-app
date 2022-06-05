@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+body[data-theme="one"] {
+    --mainbackground: hsl(222, 26%, 31%);
+    --toggle-background: hsl(223, 31%, 20%);
+    --screen-background: hsl(224, 36%, 15%);
+    --key-reset-del: hsl(225, 21%, 49%);
+    --key-reset-del-shadow: hsl(224, 28%, 35%);
+    --hover-key-reset-del: hsl(224, 27%, 60%);
+  
+    --toggle-circle: hsl(6, 63%, 50%);
+    --hover-toggle-circle: hsl(6, 55%, 57%);
+    --key-equal: hsl(6, 63%, 50%);
+    --key-equal-shadow: hsl(6, 70%, 34%);
+    --hover-key-equal: hsl(6, 55%, 57%);
+  
+    --keypad-background: hsl(223, 31%, 20%);
+    --key-background: hsl(30, 25%, 89%);
+    --key-shadow: hsl(28, 16%, 65%);
+    --hover-key-background: White;
+  
+    --text-btn: hsl(221, 14%, 31%);
+    --text-reset-del: White;
+    --text-equal: White;
+    --text-main: White;
+}
+body[data-theme="two"] {
+    --mainbackground: hsl(0, 0%, 90%);
+    --toggle-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 0%, 93%);
+    --key-reset-del: rgb(26, 161, 158);
+    --key-reset-del-shadow: hsl(185, 58%, 25%);
+    --hover-key-reset-del: rgb(67, 191, 189);
+
+    --toggle-circle: hsl(25, 98%, 40%);
+    --hover-toggle-circle: hsl(25, 91%, 58%);
+    --key-equal: hsl(25, 98%, 40%);
+    --key-equal-shadow: hsl(25, 99%, 27%);
+    --hover-key-equal: hsl(25, 91%, 58%);
+
+    --keypad-background: hsl(0, 5%, 81%);
+    --key-background: hsl(30, 25%, 89%);
+    --key-shadow: hsl(28, 16%, 65%);
+    --hover-key-background: White;
+
+    --text-reset-del: White;
+    --text-equal: White;
+    --text-main: hsl(198, 20%, 13%);
+
+}
+body[data-theme="three"] {
+    --mainbackground: hsl(268, 75%, 9%);
+    --toggle-background: hsl(268, 71%, 12%);
+    --screen-background: hsl(268, 71%, 12%);
+    --key-reset-del: hsl(281, 89%, 26%);
+    --key-reset-del-shadow: hsl(290, 70%, 36%);
+    --hover-key-reset-del: hsl(281, 59%, 49%);
+  
+    --toggle-circle: hsl(176, 100%, 44%);
+    --hover-toggle-circle: hsl(176, 100%, 68%);
+    --key-equal: hsl(176, 100%, 44%);
+    --key-equal-shadow: hsl(177, 92%, 70%);
+    --hover-key-equal: hsl(176, 100%, 68%);
+  
+    --keypad-background: hsl(268, 71%, 12%);
+    --key-background: hsl(268, 47%, 21%);
+    --hover-key-background: hsl(267, 41%, 42%);
+    --key-shadow: hsl(281, 89%, 26%);
+
+    --text-reset-del: White;
+    --text-equal: hsl(198, 20%, 13%);
+    --text-main: hsl(52, 100%, 62%);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'League Spartan', sans-serif;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: var(--mainbackground);
+    color: var(--text-main);
+}
+
+header{
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    font-size: 28px;
+    letter-spacing: 0.1rem;
+}
+body, header, .theme-section, .theme-numbers, .theme, .tri-state-toggle{
+    display: flex;
+}
+
+.theme{
+    flex-direction: column;
+    align-items: center;
+}
+.theme-section{
+    align-items: flex-end;
+}
+.theme-title{
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-right: 1rem;
+}
+.theme-numbers{
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 0.2rem;
+}
+
+input {
+    height: 15px;
+    width: 15px;
+    appearance: none;
+    background-color: var(--toggle-circle);
+    border-radius: 50%;
+    opacity: 0;
+}
+input:hover {
+    cursor: pointer;
+    background-color: var(--hover-toggle-circle);
+}
+.tri-state-toggle {
+    justify-content: center;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--toggle-background);
+    padding: 0.3rem;
+}
+#one {
+  opacity: 1;
+}
+
+main{
+    padding: 1.5rem;
+}
+.display-section > .display-screen{
+    background-color: var(--screen-background);
+    font-weight: 700;
+    font-size: 36px;
+    padding: 2rem 1.5rem;
+    text-align: right;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    height: 100px;
+}
+.calculator-section{
+    padding: 1.5rem;
+    background-color: var(--keypad-background);
+    border-radius: 0.5rem;
+}
+.calculator-section > .calculator-screen{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 0.8rem;
+}
+
+button{
+    font-family: 'League Spartan', sans-serif;
+    padding: 1.2rem 0.5rem 0.7rem 0.5rem;
+    text-transform: uppercase;
+    font-size: 32px;
+    color: var(--text-btn);
+    border-radius: 0.5rem;
+    border: none;
+}
+.number, .operator{
+    background-color: var(--key-background);
+    box-shadow: 0px 3px var(--key-shadow);
+}
+.number:hover, .operator:hover{
+    cursor: pointer;
+    background-color: var(--hover-key-background);
+}
+.reset, .del{
+    color: var(--text-reset-del);
+    background-color: var(--key-reset-del);
+    box-shadow: 0px 3px var(--key-reset-del-shadow);
+    font-size: 20px;
+}
+.reset:hover, .del:hover{
+    cursor: pointer;
+    background-color: var(--hover-key-reset-del);
+}
+.reset, .equal{
+    padding: 1.5rem;
+}
+.reset{
+    grid-area: 5 / 1 / 6 / 3;
+}
+.equal{
+    grid-area: 5 / 3 / 6 / 5; 
+    color: var(--text-equal);
+    background-color: var(--key-equal);
+    box-shadow: 0px 3px var(--key-equal-shadow);
+    font-size: 20px;
+}
+.equal:hover{
+    cursor: pointer;
+    background-color: var(--hover-key-equal);
+}
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    color: var(--text-main)
+}
+.attribution a { 
+    color: var(--text-main)
+}
+
+@media screen and (min-width: 600px) {
+    body{
+        justify-content: center;
+        align-items: center;
+        width:auto;
+    }
+    .logo-section{
+        margin-right: 18rem;
+    }
+    button{
+        padding: 1.2rem 2rem 0.7rem 2rem;
+    }
+    .calculator-section > .calculator-screen {
+        gap: 1.5rem;
+    }
+}
+
